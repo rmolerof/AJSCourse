@@ -6,3 +6,9 @@
 	<input type="text" ng-model="name">
 </div>
 <h3>Hello {{name}} del Peru</h3>
+
+<div class="container2" data-ng-init="names=['Dave', 'Rudy']">
+	<ul>
+		<li data-ng-repeat="name in names">{{name}}</li>
+	</ul>
+</div>
