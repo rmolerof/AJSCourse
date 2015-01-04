@@ -22,7 +22,12 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: RailwayStationController
     });
     
-    $routeProvider.otherwise({redirectTo: '/cars'});
+    $routeProvider.when('/class1', {
+        templateUrl: 'class1/layout',
+        controller: CarController
+    });
+    
+    $routeProvider.otherwise({redirectTo: '/class1'});
 }]);
 
 App.config(['$httpProvider', function($httpProvider) {
