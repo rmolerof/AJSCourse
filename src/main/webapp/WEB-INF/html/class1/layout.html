@@ -27,3 +27,12 @@
 	<p>Product Description: {{product.description}}</p>
 	<button ng-show="product.canPurchase">Add to cart</button>
 </div>
+
+<em><b>Built-in Directives: Array in AngularJS, ng-repeat</b></em>
+<div ng-repeat="product in products | limitTo:3 | orderBy:'-price'">
+	<p>Product: {{$index+1}}</p>
+	<p>Product Name: {{product.name}}</p>
+	<p>Product Price: {{product.price | currency}}</p>
+	<p>Product Description: {{product.description}}</p>
+	<button ng-show="product.canPurchase">Add to cart</button>
+</div>

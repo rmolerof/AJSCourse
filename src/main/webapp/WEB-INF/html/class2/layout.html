@@ -1,0 +1,14 @@
+<u class="lead">Session 3:</u>
+<p>date: {{'1388123412323' | date: 'MM/dd/yyyy @ h:mma'}}</p>
+<p>uppercase/lowercase: {{'octagon gem' | uppercase}}</p>
+<p>limit to: {{'My Description' | limitTo:8}}</p>
+
+<em><b>Images</b></em>
+<div ng-repeat="product in products | orderBy:'price'">
+	<p>Product: {{$index+1}}</p>
+	<p>Product Name: {{product.name}}</p>
+	<p>Product Price: {{product.price | currency}}</p>
+	<p>Product Description: {{product.description}}</p>
+	<img ng-src="{{product.images[0].thumb}}" style="max-height:40px;"/>
+	<button ng-show="product.canPurchase">Add to cart</button>
+</div>
