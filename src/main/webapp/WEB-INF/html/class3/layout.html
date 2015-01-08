@@ -60,24 +60,26 @@
 			<blockquote ng-repeat="review in product.reviews">
 				<b>Stars: {{review.stars}}</b>
 				{{review.body}}
-				<cite>by: {{review.author}}</cite>
+				<cite class="clearfix">by: {{review.author}} {{review.createdOn | date}}</cite>
 			</blockquote>
 			
 			<form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
-											ng-submit="reviewCtrl.addReview(product)">
+											ng-submit="reviewCtrl.addReview(product)" novalidate>
 				<blockquote ng-show="reviewCtrl.review.stars || reviewCtrl.review.body || reviewCtrl.review.author">
 					<b>Stars: {{reviewCtrl.review.stars}}</b>
 					{{reviewCtrl.review.body}}
 					<cite>by: {{reviewCtrl.review.author}}</cite>
 				</blockquote>
-				<select ng-model="reviewCtrl.review.stars">
+				<select ng-model="reviewCtrl.review.stars" required>
+					<option value="">Rate the Product</option>
 					<option value="1">1 star</option>
 					<option value="2">2 stars</option>
 					<option value="3">3 stars</option>
 				</select><br/>
-				<textarea ng-model="reviewCtrl.review.body"></textarea><br/>
+				<textarea ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." required></textarea><br/>
 				<label>by:</label>
-				<input type="email" ng-model="reviewCtrl.review.author"/><br/>
+				<input type="email" ng-model="reviewCtrl.review.author" placeholder="jimmyDean@example.org" required/><br/>
+				<label>is form valid? {{reviewForm.$valid}}</label>
 				<input type="submit" value="Submit" ng-disabled="!reviewCtrl.review.stars || !reviewCtrl.review.body || !reviewCtrl.review.author"/>
 			</form>
 		</div>
