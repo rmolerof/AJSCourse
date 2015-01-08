@@ -19,3 +19,11 @@
 	<img ng-src="{{product.images[0].thumb}}" style="max-height:40px;"/>
 	<div product-title-attribute></div>
 </div>
+
+<u class="lead">Session 7:</u>
+<p><em><b>Directive Controllers</b></em></p>
+<div ng-repeat="product in products" ng-controller="PanelController as panels">
+	<img ng-src="{{product.images[0].thumb}}" style="max-height:40px;"/>
+	<product-panels></product-panels>
+	<product-title-controlled></product-title-controlled>
+</div>

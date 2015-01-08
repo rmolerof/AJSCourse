@@ -4,7 +4,7 @@
  * CarController
  * @constructor
  */
-var Class4Controller = function($scope, $http) {
+var Class5Controller = function($scope, $http) {
 	var  gems =[{
 		name: 'Dodecahedron',
 		price: 2,
@@ -33,31 +33,3 @@ var Class4Controller = function($scope, $http) {
 	
 	$scope.products = gems;
 };
-
-App.directive('productTitle', function(){
-	return {
-		restrict: 'E', //type of directive E: element
-		templateUrl: 'resources/templates/class4/product-title.html'
-	};
-});
-
-App.directive('productTitleAttribute', function(){
-	return {
-		restrict: 'A', //type of directive A: attribute
-		templateUrl: 'resources/templates/class4/product-title.html'
-	};
-});
-
-App.directive('productPanels', function(){
-	return {
-		restrict: 'E', 
-		templateUrl: 'resources/templates/class4/product-panels.html'
-	};
-});
-
-App.directive('productTitleControlled', function(){
-	return {
-		restrict: 'E', 
-		templateUrl: 'resources/templates/class4/product-title-controlled.html'
-	};
-});
