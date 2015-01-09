@@ -1,0 +1,15 @@
+<u class="lead">Session 9:</u>
+
+<header>
+	<h2 class="text-center">- The Cogent Store -</h2>
+</header>
+<p><em><b>Final App</b></em></p>
+<div ng-controller="StoreController as store">
+	<div ng-repeat="product in store.products" ng-controller="PanelController as panels">
+		<product-gallery-simple></product-gallery-simple>
+		<product-tabs></product-tabs>
+		<product-description></product-description>
+		<product-specs></product-specs>
+		<product-reviews></product-reviews>
+	</div>
+</div>

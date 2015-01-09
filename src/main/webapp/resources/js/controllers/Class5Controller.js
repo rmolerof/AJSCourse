@@ -33,3 +33,12 @@ var Class5Controller = function($scope, $http) {
 	
 	$scope.products = gems;
 };
+
+App.controller('StoreController', ['$http', function($http){
+	
+	var store = this;
+	store.products = [];
+	$http.get('resources/templates/class5/store-products.json').success(function(data){
+		store.products = data;
+	});
+}]);
