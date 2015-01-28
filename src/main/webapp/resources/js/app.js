@@ -52,7 +52,12 @@ App.config(['$routeProvider', function ($routeProvider) {
         controller: Class6Controller
     });
     
-    $routeProvider.otherwise({redirectTo: '/class6'});
+    $routeProvider.when('/class7', {
+        templateUrl: 'class7/layout',
+        controller: Class7Controller
+    });
+    
+    $routeProvider.otherwise({redirectTo: '/class1'});
 }]);
 
 App.config(['$httpProvider', function($httpProvider) {
